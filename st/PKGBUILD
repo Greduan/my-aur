@@ -8,7 +8,7 @@ pkgrel=1
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64')
 license=('MIT')
-depends=('libxext' 'libxft')
+depends=('libxext' 'libxft' 'terminus-font')
 makedepends=('ncurses')
 url="http://st.suckless.org"
 source=("http://dl.suckless.org/st/$pkgname-$pkgver.tar.gz" 'config.h')
@@ -16,7 +16,6 @@ md5sums=('4f8ae2737120a8cba34b23c6020fe51e' 'SKIP')
 
 prepare() {
 	cp config.h "${srcdir}/$pkgname-$pkgver"
-	cd $srcdir/$pkgname-$pkgver
 }
 
 build() {
