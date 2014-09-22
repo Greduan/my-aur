@@ -2,7 +2,7 @@
 
 pkgname=st-git
 _pkgname=st
-pkgver=20140823.98a1085
+pkgver=20140909.0392d16
 pkgrel=1
 epoch=1
 pkgdesc='Simple virtual terminal emulator for X'
