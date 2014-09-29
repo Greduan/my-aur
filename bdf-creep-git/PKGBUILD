@@ -1,0 +1,26 @@
+# Maintainer: Greduan <eduan@websharks-inc.com>
+
+pkgname=bdf-creep-git
+_pkgname=bdf-creep
+pkgver=20140909.0392d16
+pkgrel=1
+epoch=1
+pkgdesc='a pretty sweet 4px wide pixel font'
+arch=('i686' 'x86_64')
+url='https://github.com/romeovs/creep'
+license=('MIT')
+depends=('fontconfig' 'xorg-fonts-encodings' 'xorg-font-utils')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+install='bdf-creep.install'
+source=('git://github.com/romeovs/creep.git')
+sha1sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git log -1 --format='%cd.%h' --date=short | tr -d -
+}
+
+package() {
+	install -Dm644 "${srcdir}/creep/creep.bdf" "${pkgdir}/usr/share/fonts/misc/creep.bdf"
+}
