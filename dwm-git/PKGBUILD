@@ -15,10 +15,12 @@ provides=("$_pkgname")
 conflicts=("$_pkgname")
 source=('git://git.suckless.org/dwm'
         'config.h'
-        'dwm-6.1-systray.diff')
+        'dwm-6.1-systray.diff'
+        'dwm-r1615-selfrestart.diff')
 sha1sums=('SKIP'
           'SKIP'
-          'ae5caa489a7e3d6f86d368b0239eaa94f02df236')
+          'ae5caa489a7e3d6f86d368b0239eaa94f02df236'
+          '44f104deae82aec4942b26e02e86187440f37b12')
 
 pkgver() {
 	cd "$srcdir/dwm"
@@ -33,6 +35,7 @@ prepare() {
 		-e 's/LDFLAGS =/LDFLAGS +=/g' \
 		-i config.mk
 	patch -l -i "$srcdir/dwm-6.1-systray.diff"
+	patch -l -i "$srcdir/dwm-r1615-selfrestart.diff"
 	cp "$srcdir/config.h" .
 }
 

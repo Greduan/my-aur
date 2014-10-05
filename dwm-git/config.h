@@ -59,7 +59,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", font, "-nb
 static const char *termcmd[]  = { "st", NULL };
 static const char *interrobangcmd[] = { "interrobang", NULL };
 static const char *passmenucmd[]    = { "passmenu", NULL };
-static const char *quitcmd[]        = { "killall", "dwm", NULL };
+
+#include "selfrestart.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -97,8 +98,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY,                       XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = quitcmd } },
+	{ MODKEY,                       XK_q,      self_restart,   {0} },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
