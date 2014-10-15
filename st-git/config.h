@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "fixed:pixelsize=10:antialias=false:autohint=false";
+/* static char font[] = "fixed:pixelsize=10:antialias=false:autohint=false"; */
+static char font[] = "dejavu sans mono:pixelsize=12";
 static int borderpx = 0;
 static char shell[] = "/bin/sh";
 static char *utmp = NULL;
