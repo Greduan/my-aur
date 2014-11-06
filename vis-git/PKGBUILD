@@ -2,7 +2,7 @@
 
 pkgname=vis-git
 _pkgname=vis
-pkgver=20141007.9b06e28
+pkgver=20141027.add639d
 pkgrel=1
 epoch=1
 pkgdesc='suckless vim like editor'
