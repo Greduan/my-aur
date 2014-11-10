@@ -1,0 +1,23 @@
+# Maintainer: Greduan <eduan@websharks-inc.com>
+
+pkgname=dvtm
+pkgver=0.12
+pkgrel=1
+pkgdesc='Tiling window management for the console'
+arch=('i686' 'x86_64')
+url="http://www.brain-dump.org/projects/${pkgname}/"
+license=('ISC')
+source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+sha1sums=('1b433db25d9751e820fc8213874eb57fd15e5552')
+
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make
+}
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make PREFIX="${pkgdir}/usr" install
+
+	install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+}
