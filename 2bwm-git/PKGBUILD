@@ -1,0 +1,38 @@
+# Maintainer: Greduan <eduan@websharks-inc.com>
+
+pkgname=2bwm-git
+_pkgname=2bwm
+pkgver=20140906.b93a34b
+pkgrel=1
+epoch=1
+pkgdesc='A fast floating WM written over the XCB library and derived from mcwm'
+arch=('i686' 'x86_64')
+url='https://github.com/venam/2bwm'
+license=('ISC')
+depends=('xcb-util-wm' 'xcb-util-keysyms')
+makedepends=('git' 'xcb-util')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}" 'mcwm' 'mcwm-git')
+source=('git://github.com/venam/2bwm.git' 'config.h' '2bwm.desktop' '2bwm.copying')
+sha1sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git log -1 --format='%cd.%h' --date=short | tr -d -
+}
+
+prepare() {
+	cd "${srcdir}/${_pkgname}"
+	cp "${srcdir}/config.h" .
+}
+
+build() {
+	cd "${srcdir}/${_pkgname}"
+	make PREFIX=/usr
+}
+
+package() {
+	cd "${srcdir}/${_pkgname}"
+	make PREFIX=/usr DESTDIR="${pkgdir}" MANPREFIX=/user/share/man install
+	install -Dm644 "$srcdir/2bwm.copying" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
