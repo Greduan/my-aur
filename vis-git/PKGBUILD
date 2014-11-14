@@ -14,7 +14,8 @@ makedepends=('git')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=('git://repo.or.cz/vis.git' 'config.h')
-sha1sums=('SKIP' 'SKIP')
+sha1sums=('SKIP'
+          '15b8f7a7dbec503eb11fcc30c3ae5b2c4edc76f9')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"

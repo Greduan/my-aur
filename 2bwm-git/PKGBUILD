@@ -13,8 +13,10 @@ depends=('xcb-util-wm' 'xcb-util-keysyms')
 makedepends=('git' 'xcb-util')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}" 'mcwm' 'mcwm-git')
-source=('git://github.com/venam/2bwm.git' 'config.h' '2bwm.desktop' '2bwm.copying')
-sha1sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+source=('git://github.com/venam/2bwm.git' 'config.h' '2bwm.copying')
+sha1sums=('SKIP'
+          'f6457dd8389f77eb41f52fdee44eb0d49a67198c'
+          'f875cf815ac608c05b5394a1b61fce90ef140d5e')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"

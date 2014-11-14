@@ -18,7 +18,8 @@ optdepends=('dmenu: URL-bar'
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=('git://git.suckless.org/surf' 'config.h')
-sha1sums=('SKIP' 'SKIP')
+sha1sums=('SKIP'
+          '5fb73d136eea82709d17344267c379959d5caa88')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"

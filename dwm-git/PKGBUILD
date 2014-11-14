@@ -18,7 +18,7 @@ source=('git://git.suckless.org/dwm'
         'dwm-6.1-systray.diff'
         'dwm-r1615-selfrestart.diff')
 sha1sums=('SKIP'
-          'SKIP'
+          'c5d8d513347ba6a078ca0fe0ba8b990e1328ad81'
           'ae5caa489a7e3d6f86d368b0239eaa94f02df236'
           '44f104deae82aec4942b26e02e86187440f37b12')
 

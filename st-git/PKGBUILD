@@ -14,7 +14,8 @@ makedepends=('libxext' 'ncurses' 'git')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=('git://git.suckless.org/st' 'config.h')
-sha1sums=('SKIP' 'SKIP')
+sha1sums=('SKIP'
+          '59f5d3a3dd9c7a97a5cc1b51fb31df6dbf8b49a5')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"
