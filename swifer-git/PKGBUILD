@@ -2,7 +2,7 @@
 
 pkgname=swifer-git
 _pkgname=swifer
-pkgver=20140226.41d5f91
+pkgver=20141124.20ccba2
 pkgrel=1
 epoch=1
 pkgdesc='Wireless connection script with auto connect'
