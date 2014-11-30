@@ -2,7 +2,7 @@
 
 pkgname=vis-git
 _pkgname=vis
-pkgver=20141027.add639d
+pkgver=20141110.d790924
 pkgrel=1
 epoch=1
 pkgdesc='suckless vim like editor'
@@ -15,7 +15,7 @@ provides=("${_pkgname}")
 conflicts=("${_pkgname}")
 source=('git://repo.or.cz/vis.git' 'config.h')
 sha1sums=('SKIP'
-          '15b8f7a7dbec503eb11fcc30c3ae5b2c4edc76f9')
+          'SKIP')
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"
