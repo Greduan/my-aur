@@ -1,0 +1,20 @@
+# Maintainer: Greduan <eduan@websharks-inc.com>
+
+pkgname=podget
+pkgver=0.7.4
+pkgrel=1
+pkgdesc='A simple podcast aggregator'
+arch=('i686' 'x86_64')
+url='http://podget.sourceforge.net/'
+license=('GPLv3')
+source=("http://downloads.sourceforge.net/project/podget/podget/podget-${pkgver}/podget-${pkgver}.tar.gz")
+sha1sums=('SKIP')
+
+package() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	make PREFIX="${pkgdir}/usr" DESTDIR="${pkgdir}" changelog.gz install
+
+	install -Dm644 README "${pkgdir}/usr/share/${pkgname}/README"
+	install -dm755 "${pkgdir}/usr/share/${pkgname}/scripts/"
+	cp -a SCRIPTS/* "${pkgdir}/usr/share/${pkgname}/scripts/"
+}
