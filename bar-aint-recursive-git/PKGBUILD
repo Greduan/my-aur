@@ -2,7 +2,7 @@
 
 pkgname=bar-aint-recursive-git
 _pkgname=bar-aint-recursive
-pkgver=20140827.e9cdee9
+pkgver=20141213.5746d15
 pkgrel=1
 epoch=1
 pkgdesc='A lightweight xcb based bar'

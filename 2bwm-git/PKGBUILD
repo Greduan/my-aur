@@ -9,13 +9,13 @@ pkgdesc='A fast floating WM written over the XCB library and derived from mcwm'
 arch=('i686' 'x86_64')
 url='https://github.com/venam/2bwm'
 license=('ISC')
-depends=('xcb-util-wm' 'xcb-util-keysyms')
+depends=('xcb-util-wm' 'xcb-util-keysyms' 'xdotool')
 makedepends=('git' 'xcb-util')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}" 'mcwm' 'mcwm-git')
 source=('git://github.com/venam/2bwm.git' 'config.h' '2bwm.copying')
 sha1sums=('SKIP'
-          'f6457dd8389f77eb41f52fdee44eb0d49a67198c'
+          'SKIP'
           'f875cf815ac608c05b5394a1b61fce90ef140d5e')
 
 pkgver() {
