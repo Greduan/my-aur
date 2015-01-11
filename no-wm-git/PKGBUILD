@@ -1,0 +1,32 @@
+# Maintainer: Greduan <me@greduan.com>
+
+pkgname=no-wm-git
+_pkgname=no-wm
+pkgver=20141130.10195c7
+pkgrel=1
+epoch=1
+pkgdesc='Use X11 without a window manager'
+arch=('i686' 'x86_64')
+url='https://github.com/patrickhaller/no-wm'
+license=('CCO1.0')
+makedepends=('git' 'xcb-util')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}" 'mcwm' 'mcwm-git')
+source=('git://github.com/patrickhaller/no-wm.git')
+sha1sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git log -1 --format='%cd.%h' --date=short | tr -d -
+}
+
+build() {
+	cd "${srcdir}/${_pkgname}"
+	make
+}
+
+package() {
+	cd "${srcdir}/${_pkgname}"
+	make PREFIX=/usr DESTDIR="${pkgdir}" install
+	install -Dm644 "$srcdir/2bwm.copying" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

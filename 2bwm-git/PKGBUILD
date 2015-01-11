@@ -35,6 +35,6 @@ build() {
 
 package() {
 	cd "${srcdir}/${_pkgname}"
-	make PREFIX=/usr DESTDIR="${pkgdir}" MANPREFIX=/user/share/man install
+	make PREFIX=/usr DESTDIR="${pkgdir}" MANPREFIX=/usr/share/man install
 	install -Dm644 "$srcdir/2bwm.copying" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
 }
