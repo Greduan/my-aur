@@ -1,0 +1,39 @@
+# Maintainer: Greduan <me@greduan.com>
+
+pkgname=svte-git
+_pkgname=svte
+pkgver=20131104.7eb938e
+pkgrel=1
+epoch=1
+pkgdesc='Very lightweight terminal emulator based on VTE (fork of tinyterm-svn package)'
+arch=('i686' 'x86_64')
+url='https://github.com/lahwaacz/tinyterm'
+license=('MIT')
+depends=('libxrandr' 'vte')
+makedepends=('git')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+source=('git+https://code.google.com/p/svte/')
+sha1sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${_pkgname}"
+	git log -1 --format='%cd.%h' --date=short | tr -d -
+}
+
+prepare() {
+	cd "${srcdir}/${_pkgname}"
+	sed -i 's/gtk+-2.0/gtk+-x11-2.0/g' config.mk
+	sed -i 's/GTKLIB=-lvte/GTKLIB=$(shell pkg-config --libs gtk+-x11-2.0 vte)/g' config.mk
+	sed -i 's/glib\/goption.h/glib.h/g' svte.c
+}
+
+build() {
+	cd "${srcdir}/${_pkgname}"
+	make
+}
+
+package() {
+	cd "${srcdir}/${_pkgname}"
+	make DESTDIR="${pkgdir}" install
+}
