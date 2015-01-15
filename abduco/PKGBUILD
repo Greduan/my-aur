@@ -1,14 +1,14 @@
 # Maintainer: Greduan <eduan@websharks-inc.com>
 
 pkgname=abduco
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='Session management in a clean and simple way'
 arch=('i686' 'x86_64')
 url='http://www.brain-dump.org/projects/abduco/'
 license=('ISC')
 source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha1sums=('063b66d8a9a83ecd5b9501afc86812a06ad79076')
+sha1sums=('e3a706b782fcb18fd70076ff3550bfdb4829b2ec')
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"

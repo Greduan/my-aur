@@ -1,14 +1,14 @@
 # Maintainer: Greduan <eduan@websharks-inc.com>
 
 pkgname=dvtm
-pkgver=0.12
+pkgver=0.13
 pkgrel=1
 pkgdesc='Tiling window management for the console'
 arch=('i686' 'x86_64')
 url="http://www.brain-dump.org/projects/${pkgname}/"
 license=('ISC')
 source=("http://www.brain-dump.org/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha1sums=('1b433db25d9751e820fc8213874eb57fd15e5552')
+sha1sums=('8a4fc2440faa3050244e5a492fb6766899e0c0d7')
 
 build() {
 	cd "${srcdir}/${pkgname}-${pkgver}"
